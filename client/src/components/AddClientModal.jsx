@@ -60,71 +60,91 @@ const AddClientModal = () => {
     <>
       <button
         type="button"
-        className="btn-solid theme-primary btn-secondary"
-        data-bs-toggle="dialog"
+        className="btn btn-secondary"
+        data-bs-toggle="modal"
         data-bs-target="#addClientModal"
       >
-        <div className="d-flex align-items-center">
-          <FaUser className="icon" />
-          <div>Add Client</div>
+        <div className="d-flex align-items-center gap-2">
+          <FaUser />
+          <span>Add Client</span>
         </div>
       </button>
 
-      <dialog className="dialog" id="addClientModal">
-        <div className="dialog-header">
-          <h1 className="dialog-title">Add Client</h1>
+      <div
+        className="modal fade"
+        id="addClientModal"
+        tabIndex="-1"
+        aria-labelledby="addClientModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="addClientModalLabel">
+                Add Client
+              </h5>
 
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="dialog"
-            aria-label="Close"
-          ></button>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div className="modal-body">
+              <form onSubmit={onSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="phone" className="form-label">
+                    Phone
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  data-bs-dismiss="modal"
+                  className="btn btn-secondary"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-
-        <div className="dialog-body">
-          <form onSubmit={onSubmit}>
-            <div className="mb-7">
-              <label className="form-label">Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="mb-7">
-              <label className="form-label">Email</label>
-              <input
-                type="text"
-                className="form-control"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="mb-7">
-              <label className="form-label">Phone</label>
-              <input
-                type="text"
-                className="form-control"
-                id="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </div>
-
-            <button
-              className="btn btn-secondary"
-              type="submit"
-              data-bs-dismiss="dialog"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-      </dialog>
+      </div>
     </>
   );
 };

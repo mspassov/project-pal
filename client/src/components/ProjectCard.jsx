@@ -1,0 +1,27 @@
+import React from "react";
+
+const ProjectCard = ({ project }) => {
+  const { id, name, status } = project;
+
+  return (
+    <>
+      <div className="col-md-4">
+        <div className="card mb-3">
+          <div className="card-body">
+            <div className="d-flex justify-content-between align-items-center">
+              <h5 className="card-title">{name}</h5>
+              <a className="btn btn-light" href={`/projects/${id}`}>
+                View
+              </a>
+            </div>
+            <div className="small">
+              Status: <strong>{status}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ProjectCard;

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Clients from "./components/Clients";
+import Projects from "./components/Projects";
 import AddClientModal from "./components/AddClientModal";
 
 import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
@@ -39,6 +40,7 @@ const App = () => {
       <div className="container">
         <AddClientModal />
         <Clients />
+        <Projects />
       </div>
     </ApolloProvider>
   );
