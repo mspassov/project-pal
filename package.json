@@ -16,10 +16,10 @@
     "graphql": "^17.1.0",
     "graphql-http": "^1.23.1",
     "mongoose": "^9.12.1",
-    "ruru": "^2.0.3"
+    "ruru": "^2.0.3",
+    "dotenv": "^18.0.10"
   },
   "devDependencies": {
-    "dotenv": "^18.0.10",
     "nodemon": "^3.1.14"
   }
 }
