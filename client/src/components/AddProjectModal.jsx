@@ -3,7 +3,6 @@ import { useState } from "react";
 import { FaList } from "react-icons/fa";
 import { useMutation, useQuery } from "@apollo/client/react";
 import { gql } from "@apollo/client";
-import e from "cors";
 
 const GET_PROJECTS = gql`
   query getProjects {
